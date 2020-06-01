@@ -1,0 +1,11 @@
+---
+- name: "Update {{ role_name }} modules settings"
+  template:
+    src:  "{{ item.src | default((item.dest | basename ()) + '.j2')}}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - dest: "/etc/modules-load.d/{{ role_name }}.conf"
+      src: "modules.conf.j2"
+  notify: "reboot"
+  tags:
+    - "w1"

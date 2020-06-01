@@ -1,0 +1,1 @@
+# configure-lm-sensors

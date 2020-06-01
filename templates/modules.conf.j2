@@ -1,0 +1,3 @@
+{% for module in (configure_w1.modules[(ansible_os_family | lower) + '_' + (ansible_architecture | lower)] | default([])) %}
+{{ module }}
+{% endfor %}

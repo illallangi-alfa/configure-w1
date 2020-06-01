@@ -1,0 +1,6 @@
+---
+configure_w1:
+  modules:
+    debian_armv7l:
+      - w1-gpio
+      - w1-therm
